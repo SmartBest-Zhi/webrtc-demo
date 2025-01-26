@@ -4,6 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 // 导入路由页面的配置
 import routes from './routes'
 
+
 // 路由参数配置
 const router = createRouter({
     // 使用hash(createWebHashHistory)模式，(createWebHistory是HTML5历史模式，支持SEO)
@@ -13,6 +14,7 @@ const router = createRouter({
 
 // 全局前置守卫，这里可以加入用户登录判断
 router.beforeEach((to, from, next) => {
+    const message = window.message
     if (import.meta.env.VITE_SECURE === 'true') {
         // 检查是否有token
         const hasToken = window.localStorage.getItem('Authentication')
@@ -21,16 +23,18 @@ router.beforeEach((to, from, next) => {
             next()
         } else {
             // 如果没有token，导航到登录页面
+            message.info("身份校验失败，请登录")
             if (to.path !== '/absproxy/5173/login') {
                 next('/absproxy/5173/login')
             } else {
                 next()
             }
         }
+    }else{
+        // 继续前进 next()
+        // 返回 false 以取消导航
+        next()
     }
-    // 继续前进 next()
-    // 返回 false 以取消导航
-    // next()
 })
 
 // 全局后置钩子，这里可以加入改变页面标题等操作

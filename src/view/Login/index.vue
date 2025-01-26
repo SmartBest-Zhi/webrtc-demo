@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import {ref} from "vue";
+  import {ref, inject} from "vue";
   import {loginByUsername} from "./api/";
-  import { message } from 'ant-design-vue';
   import {useRouter} from "vue-router";
+
   const loginData = ref({
     username: "yczbest",
     password: "admin"
@@ -10,11 +10,11 @@
   const router = useRouter()
   localStorage.removeItem("Galaxy_Token")
   const Login = async () => {
-    const [e,r] = await loginByUsername(loginData.value)
-    if (!e && r.code === 200){
-      message.success("登录成功")
+    const res= await loginByUsername(loginData.value)
+    if (res.code === 200){
+      window.message.success("登录成功")
       localStorage.setItem("Galaxy_Token", "Galaxy " + r.data)
-      router.push("/admin/userMgt")
+      await router.push("/admin/userMgt")
     }
   }
 
@@ -50,7 +50,7 @@
 .body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  /*background: url('../../assets/BG_Login.jpg') no-repeat center center fixed;*/
+  background: url('@/assets/BG_Login.jpg') no-repeat center center fixed;
   background: black;
   background-size: cover;
   height: 100vh;

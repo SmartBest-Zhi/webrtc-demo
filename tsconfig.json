@@ -5,9 +5,6 @@
             "~assets/*": [
                 "src/assets/*"
             ],
-            "~components/*": [
-                "src/components/*"
-            ],
             "~layout/*": [
                 "src/layout/*"
             ],
@@ -25,6 +22,15 @@
             ],
             "~/*": [
                 "src/*"
+            ],
+            "~Login/*": [
+                "src/view/Login/*"
+            ],
+            "~Home/*": [
+                "src/view/Home/*"
+            ],
+            "~MeetingRoom/*": [
+                "src/view/MeetingRoom/*"
             ]
         }
     }
