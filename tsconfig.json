@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "~assets/*": [
+                "src/assets/*"
+            ],
+            "~components/*": [
+                "src/components/*"
+            ],
+            "~layout/*": [
+                "src/layout/*"
+            ],
+            "~router/*": [
+                "src/router/*"
+            ],
+            "~store/*": [
+                "src/store/*"
+            ],
+            "~utils/*": [
+                "src/utils/*"
+            ],
+            "~view/*": [
+                "src/view/*"
+            ],
+            "~/*": [
+                "src/*"
+            ]
+        }
+    }
+}
