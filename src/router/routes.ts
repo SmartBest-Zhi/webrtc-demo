@@ -14,7 +14,15 @@ const routes = [
         children: [
             {
                 path: '',
-                component: () => import("../view/Home/index.vue"),
+                component: () => import("../view/AdminHome/index.vue"),
+                title: '管理员首页',
+                meta:{
+                    layout:"admin"
+                }
+            },
+            {
+                path: 'userMgt',
+                component: () => import("../view/UserMgt/index.vue"),
                 title: '管理员首页',
                 meta:{
                     layout:"admin"

@@ -31,6 +31,12 @@
             ],
             "~MeetingRoom/*": [
                 "src/view/MeetingRoom/*"
+            ],
+            "~AdminHome/*": [
+                "src/view/AdminHome/*"
+            ],
+            "~UserMgt/*": [
+                "src/view/UserMgt/*"
             ]
         }
     }

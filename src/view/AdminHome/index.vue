@@ -1,5 +1,5 @@
 <template>
-  {{ "Meeting Room" }}
+  <div>Admin Home</div>
 </template>
 
 <script>
