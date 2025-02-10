@@ -37,6 +37,9 @@
             ],
             "~UserMgt/*": [
                 "src/view/UserMgt/*"
+            ],
+            "~components/*": [
+                "src/components/*"
             ]
         }
     }
